@@ -48,7 +48,7 @@ suspend fun fetchAllRssFeeds(rssUrls: List<String>): List<BlogPostUpg> = corouti
 // RSS 모니터링용 함수
 fun CoroutineScope.launchRssMonitor(
     rssUrls: List<String>,
-    previousFeedsRef: MutableList<BlogPostUpg>git
+    previousFeedsRef: MutableList<BlogPostUpg>
 ) = launch(Dispatchers.IO) {
     while (isActive) {
         val currentFeeds = fetchAllRssFeeds(rssUrls)
